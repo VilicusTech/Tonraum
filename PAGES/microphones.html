@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tonraum has all of your pro-audio needs, from Microphones, to Speakers, shop Tonraum!">
+        
+        <title>Tonraum - Microphones</title>
+
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/70ab737a3e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <header>
+        <div class="navbar">
+            <div class="outercontainer">
+                <div class="navbar-inner">
+                    <div class="navbar-left">
+                        <span class="navtoggle" onclick="openNav()" role="button" aria-controls="sidenav" aria-expanded="false">
+                            <span style="color: #0f0f0f">
+                                <i class="fa-solid fa-align-justify fa-xl"></i>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="navbar-middle" onclick="location.href='index.html';" style="cursor: pointer;">
+                        <img src="/ASSETS/tonraumblack.png" class="midlogo">
+                    </div>
+
+                    <div class="navbar-right">
+                        <span style="color: #0f0f0f">
+                            <i class="fa-solid fa-cart-shopping fa-xl" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="microphones.html">Microphones</a>
+            <a href="headphones.html">Headphones</a>
+            <a href="monitors.html">Monitors</a>
+            <a href="contact.html">Contact Us</a>
+
+            <div class="sidenav-profile">
+                <img src="/PROFILES/PICTURES/pfp.png" class="profile-avatar">
+
+                <div class="profile-info">
+                    <p class="profile-name">Alex</p>
+                    <p class="profile-action">Profile</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("sidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("sidenav").style.width = "0";
+            }
+        </script>
+    </header>
+
+    <body>       
+        <div class="container">
+            <section class="hero-container">
+                <section class="content">
+                    <h1>Microphones</h1>
+
+                    <section class="divider"></section>
+
+                    <input type="text" id="searchbar" onkeyup="activeSearch()" placeholder="Search for a Product">
+
+                    <section class="divider"></section>
+
+                    <div id="no-results" style="text-align: center; display: none;"> 
+                        <h2>No products here yet.</h2>
+                    </div>
+
+                    <ul id="product-container" class="product-container">                        
+                        <li class="product">
+                            <div class="product-header">
+                                <a href="/PRODUCTS/trc1125.html" target="_blank"><img class="product-image" src="/IMAGES/PRODUCTS/trc1125.png"></a>
+                            </div>
+
+                            <div class="product-footer">
+                                <p class="product-status">New</p>
+                                
+                                <h3 class="product-name">
+                                    <a href="/PRODUCTS/trc1125.html" target="_blank" style="text-decoration: none; color: #000000;">TRC-1125 <br>Vocal Condenser Microphone</a>
+                                </h3>
+                                
+                                <p class="product-price">NZD $379</p> 
+                            </div>
+                        </li>                          
+                    </ul>
+
+                </section>
+            </section>
+        </div>
+    </body>
+    
+    <footer>
+        <div class="outer-container">
+            <small>&COPY; 2025 - Present | Tonraum</small>
+            <small>Built by Alex Mercier under Tonraum</small>
+        </div>
+    </footer>
+</html>
+
+<script>
+    function activeSearch() {
+        const input = document.getElementById("searchbar").value.toUpperCase();
+        const products = Array.from(document.getElementsByClassName("product"));
+        const noResults = document.getElementById("no-results");
+
+        let matches = 0;
+        
+        products.forEach(product => {
+            const text = product.textContent.toUpperCase();
+
+            if (text.includes(input)) {
+                product.style.display = "";
+                matches++;
+            }
+
+            else {
+                product.style.display = "none";
+            }
+        });
+
+        if (matches === 0) {
+            noResults.style.display = "block";
+        }
+
+        else {
+            noResults.style.display = "none";
+        }
+    }
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tonraum has all of your pro-audio needs, from Microphones, to Speakers, shop Tonraum!">
+        
+        <title>Tonraum - TRC-1125</title>
+
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/70ab737a3e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <header>
+        <div class="navbar">
+            <div class="outercontainer">
+                <div class="navbar-inner">
+                    <div class="navbar-left">
+                        <span class="navtoggle" onclick="openNav()" role="button" aria-controls="sidenav" aria-expanded="false">
+                            <span style="color: #0f0f0f">
+                                <i class="fa-solid fa-align-justify fa-xl"></i>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="navbar-middle" onclick="location.href='/PAGES/index.html';" style="cursor: pointer;">
+                        <img src="/ASSETS/tonraumblack.png" class="midlogo">
+                    </div>
+
+                    <div class="navbar-right">
+                        <span style="color: #0f0f0f">
+                            <i class="fa-solid fa-cart-shopping fa-xl" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+            <a href="/PAGES/index.html">Home</a>
+            <a href="/PAGES/about.html">About Us</a>
+            <a href="/PAGES/microphones.html">Microphones</a>
+            <a href="/PAGES/headphones.html">Headphones</a>
+            <a href="/PAGES/monitors.html">Monitors</a>
+            <a href="/PAGES/contact.html">Contact Us</a>
+
+            <div class="sidenav-profile">
+                <img src="/PROFILES/PICTURES/pfp.png" class="profile-avatar">
+
+                <div class="profile-info">
+                    <p class="profile-name">Alex</p>
+                    <p class="profile-action">Profile</p>
+                </div>
+            </div>            
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("sidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("sidenav").style.width = "0";
+            }
+        </script>
+    </header>
+
+    <body>       
+        <div class="container">
+            <section class="hero-container">
+                <section class="content">
+                    <div class="product-page">
+                        <div class="product-left">
+                            <div class="image-gallery">
+                                <img src="/IMAGES/PRODUCTS/trc1125.png" class="main-image">
+                            </div>
+
+                            <section class="product-description">
+                                <h2>Description</h2>
+                                <h3>The TRC-1125 is the reason we are here today, at <em>Tonraum.</em> This Microphone is the project that started it all. With a pristene Steel finish, coated in a deep black, this beautiful feat of engineering represents us, as a company.
+                                With Audio Quality on par with - if not better than - competing brands, this Microphones goal is to be able to catch everything. From soft, whispered vocals, to loud and energetic screams, this Microphone boasts the capability to handle both.
+                                Using a conventional balanced 3-Way XLR connector means no signal, or noise, gets lost on the way to your interface, allowing for clean, uninterrupted recording. The built in mesh stops plosives from destroying the capsule, and halts any interferance too.
+                                <br><br>
+                                This is the 1125. This is <em>Tonraum</em>.
+                                </h3>
+
+                                <section class="divider"></section>
+
+                                <h2>Specifications</h2>
+                                <h3>Capsule: 1-Inch
+                                    <br>Pickup Pattern: Cardioid
+                                    <br>Address Direction: Front-on
+                                    <br>Frequency Range: 25Hz-20kHz
+                                    <br>Output Impedance: 100 Ohms
+                                    <br>Maximum SPL: 135dB SPL
+                                    <br>Sensitivity: -32 dB re 1 Volt/Pascal (25 mV @ 94 dB SPL) +/- 2 dB @ 1kHz
+                                    <br>Power Requirements: Phantom 48V
+                                    <br>Output Connection: 3-pin Balances XLR
+                                    <br>Maximum Output: 13.7mV (@ 1kHz, 1.2% THD into 1KΩ load)
+                                </h3>
+                            </section>
+                        </div>
+
+                        <aside class="product-right">
+                            <div class="purchase-card">
+                                <h2>TRC-1125 Condesner Microphone</h2>
+
+                                <h3 class="sku">SKU: TRC-CON-STE-BLA</h3>                                
+                                
+                                <h2 style="font-size: 30px;">NZD $379</h2>
+                                
+                                <div class="stock-status">
+                                    <h3 style="color: green;">In Stock</h3>
+                                </div>                               
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </aside>
+                    </div>    
+                </section>
+            </section>
+        </div>
+    </body>
+
+    <footer>
+        <div class="outer-container">
+            <small>&COPY; 2025 - Present | Tonraum</small>
+            <small>Built by Alex Mercier under Tonraum</small>
+        </div>
+    </footer>
+</html>

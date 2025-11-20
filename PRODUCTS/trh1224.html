@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tonraum has all of your pro-audio needs, from Microphones, to Speakers, shop Tonraum!">
+        
+        <title>Tonraum - TRH-1224</title>
+
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/70ab737a3e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <header>
+        <div class="navbar">
+            <div class="outercontainer">
+                <div class="navbar-inner">
+                    <div class="navbar-left">
+                        <span class="navtoggle" onclick="openNav()" role="button" aria-controls="sidenav" aria-expanded="false">
+                            <span style="color: #0f0f0f">
+                                <i class="fa-solid fa-align-justify fa-xl"></i>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="navbar-middle" onclick="location.href='/PAGES/index.html';" style="cursor: pointer;">
+                        <img src="/ASSETS/tonraumblack.png" class="midlogo">
+                    </div>
+
+                    <div class="navbar-right">
+                        <span style="color: #0f0f0f">
+                            <i class="fa-solid fa-cart-shopping fa-xl" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+            <a href="/PAGES/index.html">Home</a>
+            <a href="/PAGES/about.html">About Us</a>
+            <a href="/PAGES/microphones.html">Microphones</a>
+            <a href="/PAGES/headphones.html">Headphones</a>
+            <a href="/PAGES/monitors.html">Monitors</a>
+            <a href="/PAGES/contact.html">Contact Us</a>
+
+            <div class="sidenav-profile">
+                <img src="/PROFILES/PICTURES/pfp.png" class="profile-avatar">
+
+                <div class="profile-info">
+                    <p class="profile-name">Alex</p>
+                    <p class="profile-action">Profile</p>
+                </div>
+            </div>            
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("sidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("sidenav").style.width = "0";
+            }
+        </script>
+    </header>
+
+    <body>       
+        <div class="container">
+            <section class="hero-container">
+                <section class="content">
+                    <div class="product-page">
+                        <div class="product-left">
+                            <div class="image-gallery">
+                                <img src="/IMAGES/PRODUCTS/trh1224.png" class="main-image">
+                            </div>
+
+                            <section class="product-description">
+                                <h2>Description</h2>
+                                <h3>I had the idea of an Open-Back headphone all the way back in 2024, and now that we're here, I can finally sell it myself. This is the TRH-1224.
+                                With an almost completely flat and accurate Frequency Response, it delivers the best, most true-to-life sound we can possibly offer. Using a Open-Back design allows for great In-Head audio quality, while also allowing Monitoring from a partial outside/stadium point of view. 
+                                Covered in premium fur and leather, it is the most comfortable headset you will ever wear. The fur pads are almost 3/4 of an inch thick, allowing for hours of studio use without discomfort. With a wishbone suspension design, they can flex to any headshape, allowing for great compatibility with any extra users.
+                                The cord is thick and woven for a premium feel, also granting it the toughness required for a Studio Headset. 
+                                
+                                <br><br>Experience the best Audio Quality we at <em>Tonraum</em> can offer you. Experience the 1224.
+                                </h3>
+
+                                <section class="divider"></section>
+
+                                <h2>Specifications</h2>
+                                <h3>Transducer Type: Dynamic
+                                    <br>Operating Type: Open
+                                    <br>Frequency Response: 5Hz-32kHz
+                                    <br>Impedance: 250 Ohms
+                                    <br>Max SPL: 98 dB
+                                    <br>Max THD: < 0.2%
+                                    <br>Power Handling: 100 mW
+                            </section>
+                        </div>
+
+                        <aside class="product-right">
+                            <div class="purchase-card">
+                                <h2>TRH-1224 Open-Back Headset</h2>
+
+                                <h3 class="sku">SKU: TRH-OPB-MTL-BLA</h3>                                
+                                
+                                <h2 style="font-size: 30px;">NZD $289</h2>
+                                
+                                <div class="stock-status">
+                                    <h3 style="color: green;">In Stock</h3>
+                                </div>                               
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </aside>
+                    </div>    
+                </section>
+            </section>
+        </div>
+    </body>
+
+    <footer>
+        <div class="outer-container">
+            <small>&COPY; 2025 - Present | Tonraum</small>
+            <small>Built by Alex Mercier under Tonraum</small>
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tonraum has all of your pro-audio needs, from Microphones, to Speakers, shop Tonraum!">
+        
+        <title>Tonraum - Home</title>
+
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/70ab737a3e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <header>
+        <div class="navbar">
+            <div class="outercontainer">
+                <div class="navbar-inner">
+                    <div class="navbar-left">
+                        <span class="navtoggle" onclick="openNav()" role="button" aria-controls="sidenav" aria-expanded="false">
+                            <span style="color: #0f0f0f">
+                                <i class="fa-solid fa-align-justify fa-xl"></i>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="navbar-middle" onclick="location.href='index.html';" style="cursor: pointer;">
+                        <img src="/ASSETS/tonraumblack.png" class="midlogo">
+                    </div>
+
+                    <div class="navbar-right">
+                        <span style="color: #0f0f0f">
+                            <i class="fa-solid fa-cart-shopping fa-xl" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="microphones.html">Microphones</a>
+            <a href="headphones.html">Headphones</a>
+            <a href="monitors.html">Monitors</a>
+            <a href="contact.html">Contact Us</a>
+
+        <!--<div class="sidenav-profile" onclick="openLogin()">-->  
+                <!--<img src="/PROFILES/PICTURES/pfp.png" class="profile-avatar">-->  
+
+                <!--<div class="profile-info">-->  
+                    <!--<p class="profile-name">Alex</p>-->  
+                    <!--<p class="profile-action">Profile</p>-->  
+                <!--</div>-->  
+            <!--</div>-->  
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("sidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("sidenav").style.width = "0";
+            }
+        </script>
+    </header>
+
+    <body>
+        <section class="hero-image">
+            <div class="overlay"></div>
+                <div class="hero-text-wrap">
+                    <h1 class="hero-text">
+                        <span id="language-flip">Welcome to Tonraum.</span>
+                    </h1>
+
+                    <p class="hero-sub">For all your Input/Output Pro-Audio needs.</p>
+                </div>
+        </section>        
+        
+        <div class="container">
+            <section class="hero-container">
+
+                <section class="content">
+
+                </section>
+            </section>
+        </div>
+    </body>
+
+</html>
+
+<script>
+    const phrases = [
+        "Wilkommen bei Tonraum.",
+        "Bienvenue chez Tonraum.",
+        "Dobro pozhalovat' v Tonraum.",
+        "Witamy w Tonraum."
+    ];
+
+    let index = 0;
+    const element = document.getElementById("language-flip");
+
+    function flipText() {
+        element.style.animation = "none";
+        void element.offsetWidth;
+        element.style.animation = "flip 1s ease forwards";
+
+        element.textContent = phrases[index];
+
+        index = (index + 1) % phrases.length;
+    }
+
+    setInterval(flipText, 5000);
+</script>
