@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Tonraum has all of your pro-audio needs, from Microphones, to Speakers, shop Tonraum!">
         
-        <title>Tonraum - TRH-1224</title>
+        <title>Tonraum - Cart</title>
 
         <link rel="stylesheet" href="/CSS/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,47 +74,22 @@
         <div class="container">
             <section class="hero-container">
                 <section class="content">
-                    <div class="product-page">
-                        <div class="product-left">
-                            <div class="image-gallery">
-                                <img src="/IMAGES/PRODUCTS/trh1224.png" class="main-image">
-                            </div>
+                    <div class="cart-page">
+                        <div class="cart-top">
+                            <section class="cart-list" id="cart-list">
 
-                            <section class="product-description">
-                                <h2>Description</h2>
-                                <h3>I had the idea of an Open-Back headphone all the way back in 2024, and now that we're here, I can finally sell it myself. This is the TRH-1224.
-                                With an almost completely flat and accurate Frequency Response, it delivers the best, most true-to-life sound we can possibly offer. Using a Open-Back design allows for great In-Head audio quality, while also allowing Monitoring from a partial outside/stadium point of view. 
-                                Covered in premium fur and leather, it is the most comfortable headset you will ever wear. The fur pads are almost 3/4 of an inch thick, allowing for hours of studio use without discomfort. With a wishbone suspension design, they can flex to any headshape, allowing for great compatibility with any extra users.
-                                The cord is thick and woven for a premium feel, also granting it the toughness required for a Studio Headset. 
-                                
-                                <br><br>Experience the best Audio Quality we at <em>Tonraum</em> can offer you. Experience the 1224.
-                                </h3>
-
-                                <section class="divider"></section>
-
-                                <h2>Specifications</h2>
-                                <h3>Transducer Type: Dynamic
-                                    <br>Operating Type: Open
-                                    <br>Frequency Response: 5Hz-32kHz
-                                    <br>Impedance: 250 Ohms
-                                    <br>Max SPL: 98 dB
-                                    <br>Max THD: < 0.2%
-                                    <br>Power Handling: 100 mW
                             </section>
                         </div>
 
-                        <aside class="product-right">
-                            <div class="purchase-card">
-                                <h2>TRH-1224 Open-Back Headset</h2>
+                        <aside class="cart-bottom">
+                            <div class="cart-purchase">
+                                <h2>Total:</h2>
 
-                                <h3 class="sku">SKU: TRH-OPB-MTL-BLA</h3>                                
+                                <h3 class="payment-info" id="gst-total"></h3>                                
                                 
-                                <h2 style="font-size: 30px;">NZD $289</h2>
-                                
-                                <div class="stock-status">
-                                    <h3 style="color: green;">In Stock</h3>
-                                </div>                               
-                                <button class="buy-button" onclick="addToCart({name: 'TRH-1224 Studio Monitors', price: 289, image: '/IMAGES/PRODUCTS/trh1224.png', sku: 'TRH-OPB-MTL-BLA'})">Add to Cart</button>
+                                <h2 style="font-size: 30px;" id="total">placehpolder</h2>
+                            
+                                <button class="pay-button">Proceed to Checkout</button>
                             </div>
                         </aside>
                     </div>    
@@ -130,3 +105,56 @@
         </div>
     </footer>
 </html>
+
+<script>
+    function loadCartPage() {
+        const cart = getCart();
+        const cartList = document.getElementById("cart-list");
+        const totalDisplay = document.getElementById("total");
+        const gstCalc = document.getElementById("gst-total");
+
+        cartList.innerHTML = "";
+
+        if (cart.length === 0) {
+            cartList.innerHTML = "<h2>No items in cart yet.</h2>";
+            totalDisplay.textContent = "$0.00";
+            return;
+        }
+
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            total += item.price;
+
+            const el = document.createElement("div");
+            el.classList.add("cart-item");
+                
+            el.innerHTML += `
+                <div class="cart-item-container">
+                    <div class="cart-item-left">
+                        <img src="${item.image}" class="cart-item-image">
+                    </div>
+
+                    <div class="cart-item-middle">
+                        <h3 style="font-size: 15px;">${item.name}</h3>
+                        <h3 style="font-size: 15px;">SKU: ${item.sku}</h3>
+                        <h3 style="font-size: 15px;">$${item.price}</h3>
+                        
+                    </div>
+
+                    <div class="cart-item-right">
+                        <a href="javascript:void(0)" class="remove-button" onclick="removeFromCart(${index})" style="text-decoration: none; color: var(--text)">&times;</a>  
+                    </div>  
+                </div>
+
+                <section class="divider"></section>
+            `;
+
+            cartList.appendChild(el);
+        });
+
+        totalDisplay.textContent = "$" + total.toFixed(2) + " + GST" ;
+    }
+
+    window.onload = loadCartPage;
+</script>       
